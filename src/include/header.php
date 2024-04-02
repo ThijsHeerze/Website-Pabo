@@ -8,20 +8,23 @@
 </head>
 <body>
 
-<div class="flex items-start justify-start p-4 text-white">
-    <div id="nav-logo" class="text-2xl font-bold w-11/12">Website Pabo</div>
-    <div class="">
-        <button id="menu-toggle" class="text-white focus:outline-none">
-            <span id="menu-toggle-label">Menu</span>
-        </button>
+<div class="">
+    <div id="nav-logo" class="text-2xl font-bold p-4 w-3/12 text-yellow-800">Website Pabo</div>
+    <div class="flex items-start justify-start p-4 fixed top-0 right-0 h-24">
+        
+        <div class="">
+            <button id="menu-toggle" class="text-pink-500 focus:outline-none">
+                <span id="menu-toggle-label">Menu</span>
+            </button>
+        </div>
+        <div class="hidden flex-col justify-right items-end p-2 text-yellow-800" id="menu-links">
+            <a href="./geschiedenis" class="block p-2 text-white hover:text-pink-500">Geschiedenis</a>
+            <a href="./adrijkskunde" class="block p-2 text-white hover:text-pink-500">Adrijkskunde</a>
+            <a href="./natuurentechniek" class="block p-2 text-white hover:text-pink-500">Natuur & Techniek</a>
+        </div>
     </div>
-    <div class="hidden flex flex-col justify-right items-end" id="menu-links">
-        <a href="./geschiedenis" class="block p-2 hover:text-gray-500">Geschiedenis</a>
-        <a href="./adrijkskunde" class="block p-2 hover:text-gray-500">Adrijkskunde</a>
-        <a href="./natuurentechniek" class="block p-2 hover:text-gray-500">Natuur & Techniek</a>
-    </div>
-</div>
 
+</div>
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menuLinks = document.getElementById('menu-links');
@@ -38,18 +41,21 @@
         if (menuOpen) {
             menuToggleLabel.textContent = "Close";
             menuToggle.innerHTML = `
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>`;
+                <span class="text-pink-400">
+                    <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg> 
+                </span>`;
         } else {
             menuToggleLabel.textContent = "Menu";
             menuToggle.innerHTML = `
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>`;
+                <span class="text-pink-400">
+                    Menu
+                </span>`;
         }
     });
 </script>
+
 
 </body>
 </html>
